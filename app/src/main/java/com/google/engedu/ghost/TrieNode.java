@@ -7,12 +7,12 @@ import java.util.HashMap;
 
 public class TrieNode {
     private HashMap<Character, TrieNode> children;
-    private boolean isWord,isSubstr,isLeaf;
+    private boolean isWord,isSubstr;
     private char c;
     public TrieNode() {
         children = new HashMap<>();
         isWord = false;
-        isLeaf = false;
+
     }
 
     public void add(String s) {
@@ -32,7 +32,6 @@ public class TrieNode {
             Set node as the end node (isWord)
              */
             if(i==s.length()-1) {
-                node.isLeaf = true;
                 node.isWord = true;
             }
             node = node.children.get(ch);
